@@ -46,6 +46,7 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:NewTestProjectResponseMessage"/>
+        <variable name="var3333" type="xsd:string"/>
   </variables>
 
   <!-- 
