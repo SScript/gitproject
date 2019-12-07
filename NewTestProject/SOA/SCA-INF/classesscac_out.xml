@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>D:\GIT\NewTestProject\SOA\composite.xml</file>
+      <name>D:\GIT\NewTestProject\SOA\composite.xml</name>
+      <fix/>
+      <msg>java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException: javax/xml/bind/JAXBException</msg>
+   </Fault>
+</Faults>

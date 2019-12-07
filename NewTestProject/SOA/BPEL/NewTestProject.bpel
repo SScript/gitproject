@@ -3,22 +3,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
-  Created: Wed Nov 27 21:35:07 EET 2019
+  Created: Sat Dec 07 12:30:57 EET 2019
   Author:  SScript
   Type: BPEL 2.0 Process
   Purpose: Synchronous BPEL Process
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 -->
-<process name="Project1"
-               targetNamespace="http://xmlns.oracle.com/TestApp/Project1/Project1"
+<process name="NewTestProject"
+               targetNamespace="http://xmlns.oracle.com/TestApp/NewTestProject/NewTestProject"
                xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-               xmlns:client="http://xmlns.oracle.com/TestApp/Project1/Project1"
+               xmlns:client="http://xmlns.oracle.com/TestApp/NewTestProject/NewTestProject"
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:ui="http://xmlns.oracle.com/soa/designer"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
          xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
 
-    <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TestApp/Project1/Project1" location="../WSDLs/Project1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TestApp/NewTestProject/NewTestProject" location="../WSDLs/NewTestProject.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         PARTNERLINKS                                                      
@@ -31,7 +31,7 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="project1_client" partnerLinkType="client:Project1" myRole="Project1Provider"/>
+    <partnerLink name="newtestproject_client" partnerLinkType="client:NewTestProject" myRole="NewTestProjectProvider"/>
   </partnerLinks>
 
   <!-- 
@@ -42,10 +42,10 @@
   -->
   <variables>
     <!-- Reference to the message passed as input during initiation -->
-    <variable name="inputVariable" messageType="client:Project1RequestMessage"/>
+    <variable name="inputVariable" messageType="client:NewTestProjectRequestMessage"/>
 
     <!-- Reference to the message that will be returned to the requester-->
-    <variable name="outputVariable" messageType="client:Project1ResponseMessage"/>
+    <variable name="outputVariable" messageType="client:NewTestProjectResponseMessage"/>
   </variables>
 
   <!-- 
@@ -57,11 +57,10 @@
   -->
   <sequence name="main">
 
-    <!-- Receive input from requestor. (Note: This maps to operation defined in Project1.wsdl) -->
-    <receive name="receiveInput" partnerLink="project1_client" portType="client:Project1" operation="process" variable="inputVariable" createInstance="yes"/>
+    <!-- Receive input from requestor. (Note: This maps to operation defined in NewTestProject.wsdl) -->
+    <receive name="receiveInput" partnerLink="newtestproject_client" portType="client:NewTestProject" operation="process" variable="inputVariable" createInstance="yes"/>
     <assign name="Assign1"></assign>
-    <assign name="Assign2"></assign>
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="project1_client" portType="client:Project1" operation="process" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="newtestproject_client" portType="client:NewTestProject" operation="process" variable="outputVariable"/>
   </sequence>
 </process>
