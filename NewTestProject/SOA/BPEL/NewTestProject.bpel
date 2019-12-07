@@ -50,6 +50,7 @@
         <variable name="var" type="xsd:string"/> 
         <variable name="var2" type="xsd:string"/> 
         <variable name="var3" type="xsd:string"/> 
+        <variable name="localVar" type="xsd:string"/> 
 
 		</variables>
 
