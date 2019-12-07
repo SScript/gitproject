@@ -50,6 +50,7 @@
     <variable name="Variable1" type="xsd:float"/>
         <variable name="asdhfjl" type="xsd:string"/>
         <variable name="var3" type="xsd:string"/>
+        <variable name="var3222" type="xsd:string"/>
   </variables>
 
   <!-- 
