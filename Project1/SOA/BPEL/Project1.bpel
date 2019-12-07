@@ -16,8 +16,7 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:ui="http://xmlns.oracle.com/soa/designer"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
-         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
 
     <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TestApp/Project1/Project1" location="../WSDLs/Project1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <!-- 
@@ -47,7 +46,6 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:Project1ResponseMessage"/>
-    <variable name="asdf" type="xsd:date"/>
   </variables>
 
   <!-- 
