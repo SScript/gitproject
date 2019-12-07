@@ -16,7 +16,8 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:ui="http://xmlns.oracle.com/soa/designer"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
-         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
     <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TestApp/NewTestProject/NewTestProject" location="../WSDLs/NewTestProject.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <!-- 
@@ -46,6 +47,9 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:NewTestProjectResponseMessage"/>
+    <variable name="Variable1" type="xsd:float"/>
+        <variable name="asdhfjl" type="xsd:string"/>
+        <variable name="var3" type="xsd:string"/>
   </variables>
 
   <!-- 
@@ -60,6 +64,7 @@
     <!-- Receive input from requestor. (Note: This maps to operation defined in NewTestProject.wsdl) -->
     <receive name="receiveInput" partnerLink="newtestproject_client" portType="client:NewTestProject" operation="process" variable="inputVariable" createInstance="yes"/>
     <assign name="Assign1"></assign>
+    <assign name="Assign2"></assign>
     <!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="newtestproject_client" portType="client:NewTestProject" operation="process" variable="outputVariable"/>
   </sequence>
