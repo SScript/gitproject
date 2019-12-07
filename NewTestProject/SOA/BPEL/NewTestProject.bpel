@@ -47,9 +47,7 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:NewTestProjectResponseMessage"/>
-    <variable name="Variable1" type="xsd:float"/>
-        <variable name="var3222" type="xsd:string"/>
-  </variables>
+        <variable name="var3222" type="xsd:string"/>  </variables>
 
   <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
